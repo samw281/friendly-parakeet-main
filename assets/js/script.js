@@ -1,6 +1,5 @@
 // Assignment code here
 
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -37,6 +36,7 @@ else {
 var lowercase = window.confirm("Use lowercase characters?");
 if (lowercase) {
   lowercaseChar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",]
+  console.log(lowercaseChar)
 }
 else {
   window.alert("No lowercase.");
@@ -60,23 +60,26 @@ else {
   window.alert("No special characters.");
   specialChar = []
 }
-
+specialChar[0] 
+console.log(specialChar[0])
 // check that atleast one character type was selected. if not return to the beginning
 if (!uppercase && !lowercase && !num && !special) {
   window.alert("Please select at least one!")
   generatePassword()
-} else {}
-
- var characters = (uppercaseChar + lowercaseChar + numChar + specialChar);
- console.log(characters)
-
- for(var i = 0; i = passwordSize; i++) {
-var randomPassWord = Math.floor(Math.random() * characters + 1);
-
-
-  return randomPassWord;
-  
-}; };
+} 
+// variable to hold all selected character types
+ var characters = uppercaseChar.concat(lowercaseChar, numChar, specialChar);
+//  generate random password
+var passwordArray = []
+ for(var i = 0; i < passwordLength; i++) {
+var randomPassWord = characters[Math.floor(Math.random() * characters.length)]; 
+console.log(randomPassWord)
+passwordArray.push(randomPassWord)
+  }
+  // join array 
+  var finalPassword = passwordArray.join('');
+  return finalPassword;
+};
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
