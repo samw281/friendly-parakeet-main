@@ -14,7 +14,7 @@ function writePassword() {
 
 function generatePassword(){
 //enter the size of the password  
-  var passwordSize = window.prompt("enter size of password");
+  var passwordSize = window.prompt("Enter a password length between 8 and 128");
 // must be between 8 and 128
   if (passwordSize >= 8 && passwordSize <= 128) {
     window.alert("Your password will be " + passwordSize + " characters long" );
